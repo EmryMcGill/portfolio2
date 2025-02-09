@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--bg-secondary);
+    border-radius: var(--br);
+    padding: 1.5rem;
+}
+
+.btn_title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 18px;
+}
+
+.logo {
+    height: 2rem;
+    width: 2rem;
+    background-color: var(--bg-primary);
+}
+
+.tag_container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
