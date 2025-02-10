@@ -1,25 +1,33 @@
+import { TiThListOutline } from 'react-icons/ti';
 import styles from '../styles/ProjectCard.module.css';
 
 import { FaGithub } from "react-icons/fa";
 
 
-const ProjectCard = () => {
+const ProjectCard = ({ title, desc, logo, tags, github, link }) => {
     return (
         <div className={styles.card}>
-            <button className={styles.btn_title}>
-                <img className={styles.logo} src="" alt="" />
-                <h3>Expresso Notes</h3>
-            </button>
-            
-            <p>Progressive web app for note-taking with 
-                offline functionality and seamless 
-                synchronization across devices. </p>
+            {link ? 
+            <a href={link} target="_blank" className={styles.btn_title}>
+                <img className={styles.logo} src={logo} />
+                <h3 className={styles.title}>{title}</h3>
+            </a> 
+            : 
+            <div href={link} target="_blank" className={styles.btn_title_nolink}>
+                <img className={styles.logo} src={logo} />
+                <h3 className={styles.title}>{title}</h3>
+            </div>
+            }
 
-            <div className={styles.tag_container}>
-                <a className='btn_icon'><FaGithub /></a>
-                <p className='tag'>React</p>
-                <p className='tag'>Pocketbase</p>
-                <p className='tag'>Docker</p>
+            <div className={styles.content}>
+                <p>{desc}</p>
+
+                <div className={styles.tag_container}>
+                    {github ? <a target='_blank' href={github} className='btn_icon'><FaGithub /></a> :''}
+                    {tags.map((tag, index) => 
+                        <p className='tag' key={index}>{tag}</p>
+                    )}
+                </div>
             </div>
         </div>
     );

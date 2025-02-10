@@ -19,7 +19,7 @@ function App() {
     const pb = new Pocketbase(import.meta.env.VITE_PB_URI);
 
     setUser(await pb.collection('users').getOne('2ecr1l4vh263g75'));
-    //setProjects(await pb.collection('projects').getFullList());
+    setProjects(await pb.collection('projects').getFullList());
   }
 
   useEffect(() => {
@@ -42,9 +42,17 @@ function App() {
       <div className={styles.right_container}>
         <h2>Projects</h2>
         <div className={styles.projects_container}>
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {projects.map((proj, index) => 
+            <ProjectCard
+            key={index}
+            title={proj.title}
+            desc={proj.desc}
+            logo={proj.logo ? `${import.meta.env.VITE_PB_URI}/api/files/projects/${proj.id}/${proj.logo}` : ''}
+            tags={proj.tags ? proj.tags : []}
+            github={proj.github}
+            link={proj.link ? proj.link : ''}
+             />
+          )}
         </div>
       </div>
     </div>

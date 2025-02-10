@@ -1,23 +1,57 @@
 .card {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     background-color: var(--bg-secondary);
     border-radius: var(--br);
-    padding: 1.5rem;
+    padding: 0rem;
+    padding-bottom: 1.5rem;
+    height: fit-content;
 }
 
 .btn_title {
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 18px;
+    padding: 1.5rem;
+    border-radius: var(--br);
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.btn_title_nolink {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: var(--br);
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.btn_title:hover {
+    background-color: rgb(215, 215, 215);
+}
+
+.title {
+    font-weight: 450 !important;
+    font-size: 21px;
 }
 
 .logo {
     height: 2rem;
     width: 2rem;
-    background-color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
 }
 
 .tag_container {
