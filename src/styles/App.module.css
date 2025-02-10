@@ -10,6 +10,9 @@
     gap: 1rem;
     padding: 4rem;
     width: 500px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
 .img_profile {
