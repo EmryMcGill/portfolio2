@@ -18,7 +18,7 @@ function App() {
   const getData = async () => {
     const pb = new Pocketbase(import.meta.env.VITE_PB_URI);
 
-    setUser(await pb.collection('users').getOne('2ecr1l4vh263g75'));
+    setUser(await pb.collection('users').getOne('385ef0x1vme4160'));
     setProjects(await pb.collection('projects').getFullList());
   }
 
