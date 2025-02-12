@@ -31,7 +31,7 @@ function App() {
       <div className={styles.left_container}>
         <img className={styles.img_profile} src={`${import.meta.env.VITE_PB_URI}/api/files/users/${user.id}/${user.avatar}`} />
         <h1>{user.name}</h1>
-          <p style={{ fontStyle: 'italic' }}>B.S. in Computer Science, 2021 - present</p>        <div className={styles.links_container}>
+          <p style={{ fontStyle: 'italic' }}>B.S. in Computer Science, 2021 - present @ McGill University</p>        <div className={styles.links_container}>
           <a href={user.github} className='btn_icon' target="_blank"><FaGithub /></a>
           <a href={user.linkedin} className='btn_icon' target="_blank"><FaLinkedin /></a>
           <a href={`mailto:${user.email}`} className='btn_icon' target="_blank"><MdEmail /></a>
